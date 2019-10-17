@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"s>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="layui/layui.js" th:src="@{/layui/layui.js}"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
+
+</head>
+<body>
+
+<!--引入公共部分-->
+    <div th:insert="~{header::topbar}"></div>
+
+
+    <div id="" class="layui-row">
+        <div id="" class="layui-col-md9 layui-col-lg-offset2">
+            <!--<button type="button" 	class="layui-btn layui-btn-radius" >Create New Admin</button>-->
+            <div>
+
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+                    <legend>Enter the information you want to edit</legend>
+                </fieldset>
+
+                <form class="layui-form layui-form-pane" action="" th:action="@{/updatesellerinfo}">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">SellerID</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="sellerId" autocomplete="off" placeholder="Please input the sellerid" class="layui-input" readonly="true" th:value="${sellerinfo.sellerId}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">UserName</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="username" autocomplete="off" placeholder="Please input the username" class="layui-input" th:value="${sellerinfo.username}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">OpenId</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="openid" autocomplete="off" placeholder="Please input the openid" class="layui-input" th:value="${sellerinfo.openid}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">CreateTime</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="createTime" autocomplete="off" placeholder="Please input the openid" class="layui-input" readonly="true" th:value="${#dates.format(sellerinfo.createTime,'yyyy/MM/dd')}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">UpdateTime</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="updateTime" autocomplete="off" placeholder="Please input the openid" class="layui-input" readonly="true" th:value="${#dates.format(sellerinfo.updateTime,'yyyy/MM/dd')}">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">Password</label>
+                        <div class="layui-input-inline">
+                            <input type="password" name="password" lay-verify="required" placeholder="Please input the password" autocomplete="off" class="layui-input" th:value="${sellerinfo.password}">
+                        </div>
+                        <!--<input type="datetime" style="visibility: hidden" name="createTime" th:text="${sellerinfo.createTime}" ></input>-->
+                        <div class="layui-form-mid layui-word-aux">Be sure to fill in the username</div>
+                            </br>
+                        </br>
+                        </br>
+                        </br>
+
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="formDemo">Submit</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">Reset</button>
+                            </div>
+                         </form>
+                        </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

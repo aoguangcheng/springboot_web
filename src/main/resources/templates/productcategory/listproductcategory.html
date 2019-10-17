@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"s>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="layui/layui.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" />
+
+</head>
+<body>
+
+<!--引入公共部分-->
+    <div th:insert="~{header::topbar}"></div>
+
+
+    <div id="" class="layui-row">
+        <div id="" class="layui-col-md9 layui-col-lg-offset2">
+                <a 	class="layui-btn layui-btn-radius" th:href="@{/toaddproductcategory}">添加类别</a>
+            <div id="">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                   <!--"categoryId=" + categoryId +
+                ", categoryName='" + categoryName + '\'' +
+                ", categoryType=" + categoryType +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';-->
+                    <tr>
+                        <th>categoryId</th>
+                        <th>categoryName</th>
+                        <th>categoryType</th>
+                        <th>createTime</th>
+                        <th>updateTime</th>
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="c:${productcategory}">
+                        <td th:text="${c.categoryId}"></td>
+                        <td th:text="${c.categoryName}"></td>
+                        <td th:text="${c.categoryType}"></td>
+                        <td th:text="${#dates.format(c.createTime, 'yy-MM-dd')}"></td>
+                        <td th:text="${#dates.format(c.createTime, 'yy-MM-dd')}"></td>
+                        <!--<td th:text="${c.productIcon}"></td>-->
+                        <td>
+                            <a class="layui-btn layui-btn-warm layui-btn-xs" th:href="@{/toupdateproductcategory/} + ${c.categoryId}">详情</a>
+                        </td>
+                        <td>
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" th:href="@{/deleteproductcategory/} + ${c.categoryId}">删除</a>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

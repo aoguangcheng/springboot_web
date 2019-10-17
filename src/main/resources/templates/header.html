@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"s>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="layui/layui.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" />
+
+</head>
+<body>
+<div  class="layui-container" th:fragment="topbar">
+    <div  class="layui-row">
+        <div  class="layui-col-md3">
+            <ul class="layui-nav layui-nav-side layui-nav-tree" lay-filter="test">
+                <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                <li class="layui-nav-item">
+                    <a href="javascript:;" th:text="${session.loginUser} + '  你好！！'"></a>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;" th:href="@{/tohomepage}">首页</a>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">后台管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;" th:href="@{/toorder}">订单</a></dd>
+                        <dd><a href="javascript:;" th:href="@{/todetail}">订单明细</a></dd>
+                        <dd><a href="javascript:;" th:href="@{/toproductinfo}">产品细节</a></dd>
+                        <dd><a href="javascript:;" th:href="@{/toproductcategory}">产品类别</a></dd>
+                        <dd><a href="javascript:;" th:href="@{/toseller}">管理员</a></dd>
+                        <!-- m<dd><a href="">产品</a></dd> -->
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">解决方案</a>
+                    <!--<dl class="layui-nav-child">-->
+                        <!--<dd><a href="">移动模块</a></dd>-->
+                        <!--<dd><a href="">后台模版</a></dd>-->
+                        <!--<dd><a href="">电商平台</a></dd>-->
+                    <!--</dl>-->
+                </li>
+                <li class="layui-nav-item"><a href="">产品</a></li>
+                <li class="layui-nav-item">
+                    <a href="" th:href="@{/tologout}">退出登录</a></li>
+            </ul>
+        </div>
+        <div id="" class="layui-col-md9 layui-col-md-offset2" style="height: 50px;">
+            <form class="layui-form" action="">
+                <input type="text" name="title" required lay-verify="required" placeholder="Search" autocomplete="off" class="layui-input">
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

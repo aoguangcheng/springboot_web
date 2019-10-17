@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"s>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="layui/layui.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" />
+
+</head>
+<body>
+
+<!--引入公共部分-->
+    <div th:insert="~{header::topbar}"></div>
+
+
+    <div id="" class="layui-row">
+        <div id="" class="layui-col-md9 layui-col-lg-offset2">
+            <button type="button" 	class="layui-btn layui-btn-radius" >添加产品</button>
+            <div id="">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                    <!--"productId='" + productId + '\'' +
+                ", productName='" + productName + '\'' +
+                ", productPrice=" + productPrice +
+                ", productStock=" + productStock +
+                ", productDescription='" + productDescription + '\'' +
+                ", productIcon='" + productIcon + '\'' +
+                ", productStatus=" + productStatus +
+                ", categoryType=" + categoryType +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +-->
+                    <tr>
+                        <th>Id</th>
+                        <th>productName</th>
+                        <th>Price</th>
+                        <!--<th>productStock</th>-->
+                        <!--<th>productDescription</th>-->
+                        <th>productIcon</th>
+                        <th>Status</th>
+                        <th>Type</th>
+                        <th>createTime</th>
+                        <th>updateTime</th>
+                        <!--<th>productIcon</th>-->
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="c:${productinfo}">
+                        <td th:text="${c.productId}"></td>
+                        <td th:text="${c.productName}"></td>
+                        <td th:text="${c.productPrice}"></td>
+                        <td th:text="${#strings.substring(c.productIcon, 8, 33)}" th:if="${ not #strings.isEmpty(c.productIcon)}"></td>
+                        <td th:text="empty" th:if="${#strings.isEmpty(c.productIcon)}"></td>
+                        <td th:text="${c.productStatus}"></td>
+                        <td th:text="${c.categoryType}"></td>
+                        <td th:text="${#dates.format(c.createTime,'yy-MM-dd')}"></td>
+                        <td th:text="${#dates.format(c.updateTime, 'yy-MM-dd')}"></td>
+                        <!--<td th:text="${c.productIcon}"></td>-->
+                        <td>
+                            <button class="layui-btn layui-btn-warm layui-btn-xs">编辑</button>
+                        </td>
+                        <td>
+                            <button class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

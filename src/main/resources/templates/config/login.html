@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>欢迎登陆</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+<!-- 你的HTML代码 -->
+<script src="layui/layui.js"></script>
+
+<div class="layui-container">
+    <!--第一行-->
+    <div class="layui-row">
+        <div class="layui-col-md10">
+            <!-- 第一排只有一列 -->
+            <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+                <legend>欢迎来到IDEA团队</legend>
+            </fieldset>
+        </div>
+
+
+        <!--第二行-->
+        <div class="layui-row">
+            <div class="layui-col-md12">
+                <!-- 第二行只有一列 -->
+                <!-- 其实这一行是占位的 -->
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+
+
+        <!--第三行-->
+        <div class="layui-row">
+            <!-- 第一列 -->
+            <div class="layui-col-md4 layui-col-lg-offset1">
+                <ul class="layui-timeline">
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis"></i>
+
+                        <div class="layui-timeline-content layui-text">
+                            <div class="layui-timeline-title">第四周，要回家了，临走之前找老师讨个好评（期待脸）</div>
+                        </div>
+                    </li>
+
+
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis"></i>
+                        <div class="layui-timeline-content layui-text">
+                            <div class="layui-timeline-title">第三周，还是继续撸代码，不过我们更优秀了，而且完成了项目开发和部署</div>
+                        </div>
+                    </li>
+
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis"></i>
+                        <div class="layui-timeline-content layui-text">
+                            <div class="layui-timeline-title">第二周，学习开发，真的没有更多了</div>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis"></i>
+                        <div class="layui-timeline-content layui-text">
+                            <div class="layui-timeline-title">第一周，成功的在公网上部署了自己的后台管理系统</div>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-timeline-axis"></i>
+                        <div class="layui-timeline-content layui-text">
+                            <div class="layui-timeline-title">7月15日，IDEA团队成立了</div>
+                        </div>
+                    </li>
+                    <li class="layui-timeline-item">
+                        <i class="layui-icon layui-anim layui-anim-rotate layui-anim-loop layui-timeline-axis"></i>
+                        <div class="layui-timeline-content layui-text">
+                            <div class="layui-timeline-title">更久之前，没有更之前了，让轮子自己转吧</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 第二列 -->
+            <div class="layui-col-md4 layui-col-lg-offset3" >
+
+                <!-- 登录表单 -->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <form class="layui-form" action="" th:action="@{/tologin}">
+                    <div class="layui-form-item">
+                        <p style="color: red" th:text="'&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;&#12288;' + ${msg}"></p>
+                        <br>
+                        <label class="layui-form-label">用户</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="username" required lay-verify="required" placeholder="请输入用户" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-inline">
+                            <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off"
+                                   class="layui-input">
+                        </div>
+                        <div class="layui-form-mid layui-word-aux"></div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 第三列 -->
+            <div class="layui-col-md4"></div>
+        </div>
+
+        <div class="layui-row">
+
+        </div>
+
+
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-lg-offset5">
+                <!-- 第四行行只有一列 -->
+                <!-- 其实这一行是占位的 -->
+                <br>
+                <br>
+                <i class="layui-icon">&#xe672;</i>
+                <span>
+								2019-2019 Copyight by IDEA IT of CTGU
+						</span>
+
+            </div>
+        </div>
+
+</body>
+</html>

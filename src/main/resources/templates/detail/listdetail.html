@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"s>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="layui/layui.js"></script>
+    <link rel="stylesheet" href="layui/css/layui.css" />
+
+</head>
+<body>
+
+<!--引入公共部分-->
+    <div th:insert="~{header::topbar}"></div>
+
+
+    <div id="" class="layui-row">
+        <div id="" class="layui-col-md9 layui-col-lg-offset2">
+            <!--<button type="button" 	class="layui-btn layui-btn-radius" >增加</button>-->
+            <div id="">
+                <table class="layui-table">
+                    <colgroup>
+                        <col width="150">
+                        <col width="200">
+                        <col>
+                    </colgroup>
+                    <thead>
+                    <!--"Detail{" +
+                    "detailId='" + detailId + '\'' +
+                    ", orderId='" + orderId + '\'' +
+                    ", productId='" + productId + '\'' +
+                    ", productName='" + productName + '\'' +
+                    ", productPrice=" + productPrice +
+                    ", productQuantity=" + productQuantity +
+                    ", productIcon='" + productIcon + '\'' +
+                    ", createTime=" + createTime +
+                    ", updateTime=" + updateTime +
+                    '}';-->
+                    <tr>
+                        <th>detailId</th>
+                        <th>orderId</th>
+                        <th>productId</th>
+                        <th>productName</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>createTime</th>
+                        <th>updateTime</th>
+                        <!--<th>productIcon</th>-->
+                        <td>Edit</td>
+                        <td>Delete</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr th:each="c:${detail}">
+                        <td th:text="${c.detailId}"></td>
+                        <td th:text="${c.orderId}"></td>
+                        <td th:text="${c.productId}"></td>
+                        <td th:text="${c.productName}"></td>
+                        <td th:text="${c.productPrice}"></td>
+                        <td th:text="${c.productQuantity}"></td>
+                        <td th:text="${#dates.format(c.createTime,'yy-MM-dd')}"></td>
+                        <td th:text="${#dates.format(c.updateTime, 'yy-MM-dd')}"></td>
+                        <!--<td th:text="${c.productIcon}"></td>-->
+                        <td>
+                            <button class="layui-btn layui-btn-warm layui-btn-xs">详情</button>
+                        </td>
+                        <td>
+                            <button class="layui-btn layui-btn-danger layui-btn-xs">删除</button>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

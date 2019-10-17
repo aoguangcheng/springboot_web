@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div style="width:500px;margin:20px auto;text-align: center">
+    <h2>
+        <a th:href="@{/toadd}">添加</a>
+    </h2>
+    <table align='center' border='1' cellspacing='0'>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>操作</td>
+        </tr>
+        <tr th:each="c:${list}">
+            <td th:text="${c.id}"></td>
+            <td th:text="${c.departmentName}"></td>
+            <td>
+                <button>编辑</button>
+                <button>删除</button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
